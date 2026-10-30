@@ -1,29 +1,47 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './i18n/translations';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppWidget from './components/WhatsAppWidget';
 import Home from './pages/Home';
-import About from './pages/About';
 import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
+import Process from './pages/Process';
+import Countries from './pages/Countries';
+import Pricing from './pages/Pricing';
+import Eligibility from './pages/Eligibility';
+import About from './pages/About';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
+import Legal from './pages/Legal';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-dark-950 text-dark-100">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="min-h-screen bg-ink-950 text-ink-100">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/countries" element={<Countries />} />
+            <Route path="/countries/:id" element={<Countries />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/eligibility" element={<Eligibility />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/legal/:type" element={<Legal />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+          <Footer />
+          <WhatsAppWidget />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 

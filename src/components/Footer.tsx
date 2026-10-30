@@ -1,107 +1,104 @@
 import { Link } from 'react-router-dom';
-import { Zap, Github, Twitter, Linkedin, Mail, ArrowRight } from 'lucide-react';
-
-const footerLinks = {
-  company: [
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Careers', path: '/about' },
-  ],
-  services: [
-    { name: 'Web Development', path: '/services' },
-    { name: 'Mobile Apps', path: '/services' },
-    { name: 'UI/UX Design', path: '/services' },
-    { name: 'Cloud Solutions', path: '/services' },
-  ],
-  resources: [
-    { name: 'Blog', path: '/' },
-    { name: 'Documentation', path: '/' },
-    { name: 'Case Studies', path: '/portfolio' },
-    { name: 'Support', path: '/contact' },
-  ],
-};
+import { Plane, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../i18n/translations';
 
 export default function Footer() {
+  const { t, dir } = useLanguage();
+
   return (
-    <footer className="relative bg-dark-950 border-t border-white/5">
-      {/* Gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent" />
+    <footer dir={dir} className="relative bg-ink-950 border-t border-white/5">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/50 to-transparent" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* CTA Section */}
+        {/* CTA */}
         <div className="py-16 text-center border-b border-white/5">
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to build something <span className="gradient-text">amazing</span>?
+            {t('home.cta.title')}
           </h3>
-          <p className="text-dark-400 mb-8 max-w-2xl mx-auto">
-            Let's collaborate and turn your vision into reality. Our team is ready to bring your next project to life.
+          <p className="text-ink-400 mb-8 max-w-2xl mx-auto">
+            {t('home.cta.subtitle')}
           </p>
           <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold hover:from-primary-500 hover:to-primary-400 transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/40 hover:scale-105"
+            to="/eligibility"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl btn-gold"
           >
-            Start a Project <ArrowRight className="w-5 h-5" />
+            {t('home.cta.button')} <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
 
-        {/* Links Grid */}
+        {/* Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
+            <Link to="/" className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-800 flex items-center justify-center">
+                <Plane className="w-5 h-5 text-white -rotate-12" />
               </div>
-              <span className="text-xl font-bold text-white">
-                Nexus<span className="text-primary-400">.</span>
-              </span>
+              <div>
+                <span className="text-lg font-bold text-white">
+                  Euro<span className="text-gold-400">link</span>
+                </span>
+                <div className="text-[9px] text-ink-400 tracking-widest uppercase">Voyages</div>
+              </div>
             </Link>
-            <p className="text-dark-400 text-sm mb-6 leading-relaxed">
-              We craft digital experiences that inspire, engage, and drive results for forward-thinking brands.
+            <p className="text-ink-400 text-sm mb-6 leading-relaxed">
+              {t('footer.tagline')}
             </p>
-            <div className="flex gap-3">
-              {[Github, Twitter, Linkedin, Mail].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-dark-400 hover:text-white hover:bg-primary-600/20 hover:border-primary-500/30 transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2 text-ink-400">
+                <Phone className="w-4 h-4" /> +44 20 1234 5678
+              </div>
+              <div className="flex items-center gap-2 text-ink-400">
+                <Mail className="w-4 h-4" /> contact@eurolinkvoyages.com
+              </div>
+              <div className="flex items-center gap-2 text-ink-400">
+                <MapPin className="w-4 h-4" /> London, United Kingdom
+              </div>
             </div>
           </div>
 
-          {/* Link Columns */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h4 className="text-white font-semibold mb-4 capitalize">{title}</h4>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="text-dark-400 hover:text-primary-400 text-sm transition-colors duration-200"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Company */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">{t('footer.company')}</h4>
+            <ul className="space-y-3">
+              <li><Link to="/about" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.about')}</Link></li>
+              <li><Link to="/services" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.services')}</Link></li>
+              <li><Link to="/process" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.process')}</Link></li>
+              <li><Link to="/countries" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.countries')}</Link></li>
+              <li><Link to="/pricing" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.pricing')}</Link></li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Resources</h4>
+            <ul className="space-y-3">
+              <li><Link to="/faq" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.faq')}</Link></li>
+              <li><Link to="/eligibility" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">Eligibility Test</Link></li>
+              <li><Link to="/dashboard" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.login')}</Link></li>
+              <li><Link to="/contact" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('nav.contact')}</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">{t('footer.legal')}</h4>
+            <ul className="space-y-3">
+              <li><Link to="/legal/privacy" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('footer.privacy')}</Link></li>
+              <li><Link to="/legal/terms" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('footer.terms')}</Link></li>
+              <li><Link to="/legal/disclaimer" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('footer.disclaimer')}</Link></li>
+              <li><Link to="/legal/notice" className="text-ink-400 hover:text-brand-400 text-sm transition-colors">{t('footer.legalNotice')}</Link></li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom */}
         <div className="py-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-dark-500 text-sm">
-            © 2026 Nexus Digital. All rights reserved.
+          <p className="text-ink-500 text-sm">
+            © 2026 Eurolink Voyages Ltd. {t('footer.rights')}
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-dark-500 hover:text-dark-300 text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-dark-500 hover:text-dark-300 text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-dark-500 hover:text-dark-300 text-sm transition-colors">Cookies</a>
+          <div className="text-ink-500 text-xs text-center md:text-right">
+            Registered in England & Wales | Company No. 12345678
           </div>
         </div>
       </div>

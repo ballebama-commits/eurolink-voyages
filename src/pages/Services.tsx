@@ -1,127 +1,69 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  Code2, Palette, Smartphone, Globe, Shield, Rocket,
-  Database, Cloud, BarChart3, Cpu, Layers, CheckCircle2,
-  ArrowRight, ChevronRight
-} from 'lucide-react';
+import { ClipboardCheck, FileText, Users, Plane, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../i18n/translations';
 
 const services = [
-  {
-    icon: Code2,
-    title: 'Web Development',
-    desc: 'Custom web applications built with modern frameworks and best practices.',
-    color: 'from-blue-500 to-cyan-500',
-    features: ['React & Next.js Applications', 'Progressive Web Apps', 'E-Commerce Platforms', 'Custom CMS Solutions', 'API Development & Integration', 'Performance Optimization'],
-  },
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    desc: 'User-centered design that creates intuitive and beautiful digital experiences.',
-    color: 'from-purple-500 to-pink-500',
-    features: ['User Research & Testing', 'Wireframing & Prototyping', 'Visual Design Systems', 'Interaction Design', 'Brand Identity Design', 'Design Audits'],
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile Development',
-    desc: 'Native and cross-platform mobile apps that users love.',
-    color: 'from-green-500 to-emerald-500',
-    features: ['iOS & Android Native Apps', 'React Native Development', 'Flutter Applications', 'App Store Optimization', 'Push Notifications', 'Offline-First Architecture'],
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud & DevOps',
-    desc: 'Scalable infrastructure and streamlined deployment pipelines.',
-    color: 'from-indigo-500 to-violet-500',
-    features: ['AWS & Azure Solutions', 'CI/CD Pipelines', 'Container Orchestration', 'Infrastructure as Code', 'Monitoring & Logging', 'Auto-Scaling Architecture'],
-  },
-  {
-    icon: Shield,
-    title: 'Cybersecurity',
-    desc: 'Enterprise-grade security to protect your digital assets.',
-    color: 'from-red-500 to-rose-500',
-    features: ['Security Audits', 'Penetration Testing', 'Compliance Consulting', 'Data Encryption', 'Incident Response', 'Security Training'],
-  },
-  {
-    icon: BarChart3,
-    title: 'Digital Strategy',
-    desc: 'Data-driven strategies to accelerate your digital growth.',
-    color: 'from-orange-500 to-amber-500',
-    features: ['Market Research', 'Growth Strategy', 'Analytics & Insights', 'SEO & Content Strategy', 'Conversion Optimization', 'Digital Transformation'],
-  },
-];
-
-const process = [
-  { step: '01', title: 'Discovery', desc: 'We dive deep into your business goals, target audience, and technical requirements.' },
-  { step: '02', title: 'Strategy', desc: 'We develop a comprehensive roadmap with clear milestones and deliverables.' },
-  { step: '03', title: 'Design', desc: 'Our designers create stunning visuals and intuitive user experiences.' },
-  { step: '04', title: 'Development', desc: 'Our engineers bring designs to life with clean, scalable code.' },
-  { step: '05', title: 'Testing', desc: 'Rigorous QA ensures everything works flawlessly across all devices.' },
-  { step: '06', title: 'Launch', desc: 'We deploy your solution and provide ongoing support and optimization.' },
-];
-
-const techStack = [
-  { category: 'Frontend', items: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS'] },
-  { category: 'Backend', items: ['Node.js', 'Python', 'Go', 'Rust', 'GraphQL'] },
-  { category: 'Mobile', items: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Expo'] },
-  { category: 'Cloud', items: ['AWS', 'Google Cloud', 'Azure', 'Vercel', 'Docker'] },
-  { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Supabase', 'Prisma'] },
-  { category: 'Tools', items: ['Figma', 'Git', 'Jira', 'Notion', 'Slack'] },
+  { icon: ClipboardCheck, titleKey: 'services.s1.title', descKey: 'services.s1.desc', color: 'from-brand-500 to-brand-700', features: {
+    en: ['Academic credentials analysis', 'Professional experience review', 'Schengen alignment assessment', 'Eligibility report'],
+    fr: ['Analyse des diplômes', 'Revue de l\'expérience professionnelle', 'Évaluation alignement Schengen', 'Rapport d\'éligibilité'],
+    ru: ['Анализ дипломов', 'Обзор опыта', 'Оценка соответствия Шенгену', 'Отчет о соответствии'],
+    ar: ['تحليل الشهادات', 'مراجعة الخبرة', 'تقييم التوافق مع شنغن', 'تقرير الأهلية'],
+  }},
+  { icon: FileText, titleKey: 'services.s2.title', descKey: 'services.s2.desc', color: 'from-gold-500 to-gold-600', features: {
+    en: ['Document verification', 'Work contract review', 'Cover letter drafting', 'Official forms completion'],
+    fr: ['Vérification des documents', 'Revue des contrats', 'Rédaction des lettres', 'Formulaires officiels'],
+    ru: ['Проверка документов', 'Обзор контрактов', 'Составление писем', 'Официальные формы'],
+    ar: ['التحقق من الوثائق', 'مراجعة العقود', 'صياغة الرسائل', 'النماذج الرسمية'],
+  }},
+  { icon: Users, titleKey: 'services.s3.title', descKey: 'services.s3.desc', color: 'from-emerald-500 to-emerald-600', features: {
+    en: ['Mock consular interviews', 'Stress management coaching', 'Cultural preparation', 'Expert feedback sessions'],
+    fr: ['Simulations d\'entretiens', 'Coaching gestion du stress', 'Préparation culturelle', 'Sessions feedback expert'],
+    ru: ['Имитация собеседований', 'Коучинг управления стрессом', 'Культурная подготовка', 'Экспертные сессии'],
+    ar: ['محاكاة المقابلات', 'تدريب إدارة الضغط', 'التحضير الثقافي', 'جلسات خبراء'],
+  }},
+  { icon: Plane, titleKey: 'services.s4.title', descKey: 'services.s4.desc', color: 'from-purple-500 to-purple-600', features: {
+    en: ['Schengen insurance assistance', 'Temporary accommodation', 'Flight booking support', 'Airport pickup coordination'],
+    fr: ['Assurance Schengen', 'Logement temporaire', 'Réservation de vol', 'Transfert aéroport'],
+    ru: ['Страховка Шенген', 'Временное жилье', 'Бронирование билетов', 'Трансфер'],
+    ar: ['تأمين شنغن', 'سكن مؤقت', 'حجز طيران', 'استقبال المطار'],
+  }},
 ];
 
 export default function Services() {
+  const { t, language, dir } = useLanguage();
+
   return (
-    <main className="pt-20">
-      {/* Hero */}
+    <main dir={dir} className="pt-20">
       <section className="relative py-24 hero-gradient grid-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-500/20 text-primary-300 text-sm font-medium mb-6">
-              Our Services
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Solutions That <span className="gradient-text">Drive Results</span>
-            </h1>
-            <p className="text-lg text-dark-400 leading-relaxed max-w-2xl">
-              From concept to launch, we provide comprehensive digital services that help businesses 
-              thrive in the modern digital landscape. Every solution is tailored to your unique needs.
-            </p>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-brand-600/10 border border-brand-500/20 text-brand-300 text-sm font-medium mb-6">{t('nav.services')}</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">{t('services.title')}</h1>
+            <p className="text-lg text-ink-400 leading-relaxed max-w-2xl">{t('services.subtitle')}</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
             {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card rounded-2xl p-8 md:p-10 hover:border-primary-500/20 transition-all duration-300"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass rounded-2xl p-8 md:p-10 hover:border-brand-500/20 transition-all duration-300">
                 <div className="grid md:grid-cols-3 gap-8 items-start">
                   <div className="md:col-span-1">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                    <p className="text-dark-400">{service.desc}</p>
+                    <h3 className="text-2xl font-bold text-white mb-2">{t(service.titleKey)}</h3>
+                    <p className="text-ink-400">{t(service.descKey)}</p>
                   </div>
                   <div className="md:col-span-2">
                     <div className="grid sm:grid-cols-2 gap-3">
-                      {service.features.map((feature, j) => (
+                      {service.features[language].map((feature, j) => (
                         <div key={j} className="flex items-center gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-accent-400 flex-shrink-0" />
-                          <span className="text-dark-300 text-sm">{feature}</span>
+                          <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                          <span className="text-ink-300 text-sm">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -133,115 +75,13 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-24 bg-dark-900/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our <span className="gradient-text">Process</span>
-            </h2>
-            <p className="text-dark-400 max-w-2xl mx-auto text-lg">
-              A proven methodology that ensures consistent, high-quality results.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {process.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card rounded-2xl p-8 hover:border-primary-500/30 transition-all duration-300 group relative overflow-hidden"
-              >
-                <div className="absolute top-4 right-4 text-6xl font-bold text-white/5 group-hover:text-primary-500/10 transition-colors">
-                  {step.step}
-                </div>
-                <div className="relative z-10">
-                  <span className="text-primary-400 font-bold text-sm">Step {step.step}</span>
-                  <h3 className="text-xl font-bold text-white mt-2 mb-3">{step.title}</h3>
-                  <p className="text-dark-400 text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Tech <span className="gradient-text">Stack</span>
-            </h2>
-            <p className="text-dark-400 max-w-2xl mx-auto text-lg">
-              We use the latest and most reliable technologies to build your solutions.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {techStack.map((category, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card rounded-2xl p-6"
-              >
-                <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-                  <Layers className="w-5 h-5 text-primary-400" />
-                  {category.category}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {category.items.map((item) => (
-                    <span
-                      key={item}
-                      className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-dark-300 text-sm"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing CTA */}
-      <section className="py-24 bg-dark-900/30">
+      <section className="py-24 bg-ink-900/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Need a Custom <span className="gradient-text">Solution</span>?
-            </h2>
-            <p className="text-dark-400 text-lg mb-10 max-w-2xl mx-auto">
-              Every project is unique. Let's discuss your specific requirements and create a tailored plan that fits your budget and timeline.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-10 py-5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 text-white font-bold text-lg hover:from-primary-500 hover:to-primary-400 transition-all duration-300 shadow-2xl shadow-primary-600/30 hover:scale-105"
-            >
-              Request a Quote <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to <span className="gradient-text">Start?</span></h2>
+          <p className="text-ink-400 text-lg mb-10">Take the first step towards your European career today.</p>
+          <Link to="/eligibility" className="inline-flex items-center gap-2 px-10 py-5 rounded-xl btn-gold text-lg">
+            {t('home.cta.button')} <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
     </main>
