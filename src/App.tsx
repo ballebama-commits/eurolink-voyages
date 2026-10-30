@@ -1,5 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './i18n/translations';
+import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -39,6 +40,11 @@ function App() {
           </Routes>
           <Footer />
           <WhatsAppWidget />
+          <Toaster position="top-right" toastOptions={{
+            style: { background: '#1e293b', color: '#f1f5f9', border: '1px solid rgba(148, 163, 184, 0.1)' },
+            success: { iconTheme: { primary: '#10b981', secondary: '#f1f5f9' } },
+            error: { iconTheme: { primary: '#ef4444', secondary: '#f1f5f9' } },
+          }} />
         </div>
       </Router>
     </LanguageProvider>
