@@ -16,11 +16,11 @@ export const countries: Country[] = [
     id: 'germany',
     name: { en: 'Germany', fr: 'Allemagne', ru: 'Германия', ar: 'ألمانيا' },
     flag: '🇩🇪',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1560969184-11fe6c2c718b?w=600&q=80',
-      'https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=600&q=80',
-      'https://images.unsplash.com/photo-1587330979470-3595ac045ab0?w=600&q=80',
+      'https://images.unsplash.com/photo-1560969184-11fe6c2c718b?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1587330979470-3595ac045ab0?w=600&q=80&auto=format&fit=crop',
     ],
     description: {
       en: 'Germany offers the Chancenkarte (Opportunity Card) and skilled worker visas. Europe\'s largest economy with high demand in healthcare, engineering, IT, and hospitality.',
@@ -47,11 +47,11 @@ export const countries: Country[] = [
     id: 'france',
     name: { en: 'France', fr: 'France', ru: 'Франция', ar: 'فرنسا' },
     flag: '🇫🇷',
-    image: 'https://images.unsplash.com/photo-1502602682916-03761f9d0689?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1502602682916-03761f9d0689?w=800&q=80&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1499856871958-5b963283db00?w=600&q=80',
-      'https://images.unsplash.com/photo-1431274172761-fca41d930114?w=600&q=80',
-      'https://images.unsplash.com/photo-1478391679764-b2d8b3a12fbb?w=600&q=80',
+      'https://images.unsplash.com/photo-1499856871958-5b963283db00?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1431274172761-fca41d930114?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1478391679764-b2d8b3a12fbb?w=600&q=80&auto=format&fit=crop',
     ],
     description: {
       en: 'France offers the "Salarié" visa and "Passeport Talent" program. A leading destination with rich culture and strong demand in hospitality, healthcare, and agriculture.',
@@ -78,11 +78,11 @@ export const countries: Country[] = [
     id: 'belgium',
     name: { en: 'Belgium', fr: 'Belgique', ru: 'Бельгия', ar: 'بلجيكا' },
     flag: '🇧🇪',
-    image: 'https://images.unsplash.com/photo-1559113202-c916b8e44d8b?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1559113202-c916b8e44d8b?w=800&q=80&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1558635924-b60e3d8588fe?w=600&q=80',
-      'https://images.unsplash.com/photo-1564515437264-b8c7877d45b9?w=600&q=80',
-      'https://images.unsplash.com/photo-1542633524-68139a2a1a61?w=600&q=80',
+      'https://images.unsplash.com/photo-1558635924-b60e3d8588fe?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1564515437264-b8c7877d45b9?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542633524-68139a2a1a61?w=600&q=80&auto=format&fit=crop',
     ],
     description: {
       en: 'Belgium offers the Single Permit (work + residence). High demand for healthcare professionals, engineers, and skilled tradespeople in a multilingual environment.',
@@ -109,11 +109,11 @@ export const countries: Country[] = [
     id: 'italy',
     name: { en: 'Italy', fr: 'Italie', ru: 'Италия', ar: 'إيطاليا' },
     flag: '🇮🇹',
-    image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80',
-      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=600&q=80',
-      'https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=600&q=80',
+      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=600&q=80&auto=format&fit=crop',
     ],
     description: {
       en: 'Italy recruits heavily in hospitality, agriculture, healthcare, and construction. The Decreto Flussi opens annual quotas for non-EU workers.',
@@ -140,11 +140,11 @@ export const countries: Country[] = [
     id: 'poland',
     name: { en: 'Poland', fr: 'Pologne', ru: 'Польша', ar: 'بولندا' },
     flag: '🇵🇱',
-    image: 'https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=80&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1569587112025-0d460e81a126?w=600&q=80',
-      'https://images.unsplash.com/photo-1519524767868-1bf96f81b8ee?w=600&q=80',
-      'https://images.unsplash.com/photo-1587082355065-32cf9478f0ac?w=600&q=80',
+      'https://images.unsplash.com/photo-1569587112025-0d460e81a126?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1519524767868-1bf96f81b8ee?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1587082355065-32cf9478f0ac?w=600&q=80&auto=format&fit=crop',
     ],
     description: {
       en: 'Poland is a fast-growing economy with high demand for workers in warehousing, production, transport, and agri-food. Simplified procedures for non-EU workers.',
@@ -171,11 +171,11 @@ export const countries: Country[] = [
     id: 'greece',
     name: { en: 'Greece', fr: 'Grèce', ru: 'Греция', ar: 'اليونان' },
     flag: '🇬🇷',
-    image: 'https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&q=80',
-      'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&q=80',
-      'https://images.unsplash.com/photo-1580377968162-3f6d49600d8b?w=600&q=80',
+      'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1580377968162-3f6d49600d8b?w=600&q=80&auto=format&fit=crop',
     ],
     description: {
       en: 'Greece recruits in hospitality, personal care, construction, agriculture, IT, and engineering. A gateway to Southern Europe with a Mediterranean lifestyle.',
@@ -202,11 +202,11 @@ export const countries: Country[] = [
     id: 'luxembourg',
     name: { en: 'Luxembourg', fr: 'Luxembourg', ru: 'Люксембург', ar: 'لوكسمبورغ' },
     flag: '🇱🇺',
-    image: 'https://images.unsplash.com/photo-1582428156671-5e84e5d2f5c5?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1582428156671-5e84e5d2f5c5?w=800&q=80&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1597431500581-f483c12e7f0c?w=600&q=80',
-      'https://images.unsplash.com/photo-1560703650-ef3e0f254ae0?w=600&q=80',
-      'https://images.unsplash.com/photo-1591084728795-1149f32d9866?w=600&q=80',
+      'https://images.unsplash.com/photo-1597431500581-f483c12e7f0c?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1560703650-ef3e0f254ae0?w=600&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1591084728795-1149f32d9866?w=600&q=80&auto=format&fit=crop',
     ],
     description: {
       en: 'Luxembourg offers the highest salaries in the EU. High demand for nurses, teachers, social workers, finance, IT, cybersecurity, and skilled trades.',
@@ -303,7 +303,7 @@ export const faqData = [
       ar: 'كم تستغرق العملية برمتها؟',
     },
     a: {
-      en: 'The entire process typically takes 3 to 6 months, depending on the destination country, completeness of your file, and administrative processing times. We provide detailed timelines during your initial consultation.',
+      en: 'The entire process typically takes 3 to 6 months, depending on the destination country, completeness of your file, and administrative processing times.',
       fr: 'L\'ensemble de la procédure prend généralement 3 à 6 mois, selon le pays de destination, la complétude du dossier et les délais administratifs.',
       ru: 'Весь процесс обычно занимает от 3 до 6 месяцев.',
       ar: 'تستغرق العملية برمتها عادة من 3 إلى 6 أشهر.',
@@ -317,7 +317,7 @@ export const faqData = [
       ar: 'هل تضمن الحصول على التأشيرة؟',
     },
     a: {
-      en: 'No. Eurolink Voyages is bound by an obligation of means, not results. The final decision on visa issuance rests exclusively with the competent embassies and consulates. However, our expertise maximizes your chances of success.',
+      en: 'No. Eurolink Voyages is bound by an obligation of means, not results. The final decision on visa issuance rests exclusively with the competent embassies and consulates.',
       fr: 'Non. Eurolink Voyages est tenu à une obligation de moyens et non de résultats. La décision finale appartient exclusivement aux ambassades et consulats.',
       ru: 'Нет. Eurolink Voyages обязуется средствами, а не результатом.',
       ar: 'لا. يورولينك فوياجس ملتزمة بوسيلة وليس بنتيجة.',
@@ -331,7 +331,7 @@ export const faqData = [
       ar: 'ما هي الوثائق التي أحتاج إلى تقديمها؟',
     },
     a: {
-      en: 'You will need a valid passport (>3 months after stay), criminal record (bulletin n°3 <3 months), diplomas and certifications, work experience proofs, Europass-format CV, medical certificate, and passport photos. We provide a complete personalized checklist.',
+      en: 'You will need a valid passport, criminal record, diplomas, work experience proofs, Europass-format CV, medical certificate, and passport photos.',
       fr: 'Vous aurez besoin d\'un passeport valide, casier judiciaire, diplômes, preuves d\'expérience, CV Europass, certificat médical et photos.',
       ru: 'Вам понадобится действующий паспорт, справка о несудимости, дипломы, подтверждения опыта, резюме Europass.',
       ar: 'ستحتاج إلى جواز سفر صالح، سجل جنائي، شهادات، إثبات الخبرة، سيرة ذاتية Europass.',
@@ -345,7 +345,7 @@ export const faqData = [
       ar: 'ما هي خيارات الدفع؟',
     },
     a: {
-      en: 'We accept payments in EUR, USD, and FCFA. Payment is structured in stages aligned with your file progress. We accept bank transfers, mobile money, and international cards.',
+      en: 'We accept payments in EUR, USD, and FCFA. Payment is structured in stages aligned with your file progress.',
       fr: 'Nous acceptons les paiements en EUR, USD et FCFA. Le paiement est structuré par étapes.',
       ru: 'Мы принимаем оплату в EUR, USD и FCFA.',
       ar: 'نقبل الدفع باليورو والدولار والفرنك.',
@@ -359,7 +359,7 @@ export const faqData = [
       ar: 'هل توفر السكن في أوروبا؟',
     },
     a: {
-      en: 'Yes! For the first 3 months after arrival, accommodation is covered by our service. For unskilled workers, we also cover 3 months of training costs upon arrival.',
+      en: 'Yes! For the first 3 months after arrival, accommodation is covered by our service.',
       fr: 'Oui ! Pour les 3 premiers mois après l\'arrivée, le logement est couvert par notre service.',
       ru: 'Да! На первые 3 месяца проживание покрывается нашим сервисом.',
       ar: 'نعم! الأشهر الثلاثة الأولى بعد الوصول يغطى السكن.',
