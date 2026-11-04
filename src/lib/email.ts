@@ -22,24 +22,24 @@ export interface EmailData {
   };
 }
 
-export async function sendApplicationEmail( EmailData): Promise<boolean> {
+export async function sendApplicationEmail(data: EmailData): Promise<boolean> {
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   if (!serviceId || !templateId || !publicKey) {
-    console.warn('⚠️ EmailJS not configured');
+    console.warn('⚠️ EmailJS not configured. Check your .env file.');
     return false;
   }
 
-  // Variables qui correspondent EXACTEMENT à votre template EmailJS
   const templateParams = {
+    to_email: data.to,
+    subject: data.subject,
     name: data.applicationData.fullName,
     email: data.applicationData.email,
     phone: data.applicationData.phone,
     destination: data.applicationData.destination,
     amount: `${data.paymentInfo.amount} ${data.paymentInfo.currency}`,
-    // Variables supplémentaires (ajoutez-les à votre template si vous voulez)
     diploma: data.applicationData.diploma,
     sector: data.applicationData.sector,
     experience: data.applicationData.experience,
@@ -47,20 +47,17 @@ export async function sendApplicationEmail( EmailData): Promise<boolean> {
     language: data.applicationData.languageLevel,
     documents: data.documents.length > 0 ? data.documents.join(', ') : 'No documents',
     transaction_id: data.paymentInfo.transactionId,
-    message: `New application from ${data.applicationData.fullName} for ${data.applicationData.destination}.`,
+    message: `New application from ${data.applicationData.fullName}`,
     current_date: new Date().toLocaleDateString('en-GB')
   };
 
   try {
     console.log('📧 Sending email...');
-    console.log('Template params:', templateParams);
-    
     const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
-    console.log('✅ Email sent!', response.status, response.text);
+    console.log('✅ Email sent successfully!', response.status, response.text);
     return true;
-  } catch (error: any) {
-    console.error('❌ Email failed:', error);
-    console.error('Error details:', error.text || error.message);
+  } catch (error) {
+    console.error('❌ Email sending failed:', error);
     return false;
   }
 }
