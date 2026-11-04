@@ -54,29 +54,48 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right Visual */}
+            {/* Right Visual - Airport Image */}
             <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="hidden lg:block relative">
-              <div className="relative">
-                <div className="glass rounded-3xl p-8 relative z-10">
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { icon: Shield, title: 'Rigorous', color: 'text-brand-400', bg: 'from-brand-500/20 to-brand-600/20' },
-                      { icon: Users, title: 'Expert', color: 'text-gold-400', bg: 'from-gold-500/20 to-gold-600/20' },
-                      { icon: Eye, title: 'Transparent', color: 'text-emerald-400', bg: 'from-emerald-500/20 to-emerald-600/20' },
-                      { icon: Award, title: 'Certified', color: 'text-purple-400', bg: 'from-purple-500/20 to-purple-600/20' },
-                    ].map((item, i) => (
-                      <div key={i} className="glass rounded-2xl p-5 hover:border-brand-500/30 transition-all duration-300">
-                        <item.icon className={`w-8 h-8 ${item.color} mb-3`} />
-                        <h4 className="text-white font-semibold text-sm">{item.title}</h4>
-                      </div>
-                    ))}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-600/20">
+                {/* Airport Image */}
+                <img 
+                  src="https://image.qwenlm.ai/generated-images/13884304-373d-4bdb-be0e-9f1e74d7010d/_result.png" 
+                  alt="International Airport Terminal"
+                  className="w-full h-[500px] object-cover"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/40 to-transparent" />
+                
+                {/* Floating Elements */}
+                <div className="absolute top-6 right-6 glass rounded-2xl p-4 animate-float">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center">
+                      <Plane className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold text-sm">7 Countries</div>
+                      <div className="text-ink-400 text-xs">Schengen Area</div>
+                    </div>
                   </div>
                 </div>
-                <div className="absolute -top-6 -right-6 w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-600/20 border border-brand-500/20 backdrop-blur-xl flex items-center justify-center animate-float">
-                  <Plane className="w-10 h-10 text-brand-400" />
+
+                <div className="absolute bottom-6 left-6 glass rounded-2xl p-4 animate-float-delay">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500 to-gold-600 flex items-center justify-center">
+                      <Award className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold text-sm">95% Success</div>
+                      <div className="text-ink-400 text-xs">Visa Approval</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-2xl bg-gradient-to-br from-gold-500/20 to-gold-600/20 border border-gold-500/20 backdrop-blur-xl flex items-center justify-center animate-float-delay">
-                  <Globe className="w-8 h-8 text-gold-400" />
+
+                {/* Bottom Text Overlay */}
+                <div className="absolute bottom-6 right-6 text-right">
+                  <div className="text-white font-bold text-lg">Your Journey</div>
+                  <div className="text-gold-400 font-semibold">Starts Here ✈️</div>
                 </div>
               </div>
             </motion.div>
