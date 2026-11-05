@@ -1,5 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './i18n/translations';
+import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -46,6 +47,7 @@ function App() {
             error: { iconTheme: { primary: '#ef4444', secondary: '#f1f5f9' } },
           }} />
         </div>
+        <Analytics />
       </Router>
     </LanguageProvider>
   );
